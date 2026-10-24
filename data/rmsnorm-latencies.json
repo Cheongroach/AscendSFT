@@ -1,0 +1,100 @@
+{
+  "provenance": "Sanitized historical API timing medians; no input tensors or binary artifacts.",
+  "units": "microseconds per synchronized API call",
+  "windows": 5,
+  "calls_per_window": 100,
+  "warmup_calls": 10,
+  "fp32_core_forward_backward_weight_frozen": true,
+  "rows": [
+    {
+      "shape": [
+        17,
+        128
+      ],
+      "cann_forward": 11.93,
+      "backport_forward": 9.35,
+      "cann_forward_backward": 63.69,
+      "backport_forward_backward": 76.01
+    },
+    {
+      "shape": [
+        1512,
+        128
+      ],
+      "cann_forward": 12.07,
+      "backport_forward": 26.11,
+      "cann_forward_backward": 64.55,
+      "backport_forward_backward": 71.77
+    },
+    {
+      "shape": [
+        6292,
+        128
+      ],
+      "cann_forward": 11.9,
+      "backport_forward": 71.87,
+      "cann_forward_backward": 72.64,
+      "backport_forward_backward": 169.86
+    },
+    {
+      "shape": [
+        17,
+        2048
+      ],
+      "cann_forward": 11.92,
+      "backport_forward": 9.71,
+      "cann_forward_backward": 65.04,
+      "backport_forward_backward": 71.86
+    },
+    {
+      "shape": [
+        1512,
+        2048
+      ],
+      "cann_forward": 24.72,
+      "backport_forward": 28.38,
+      "cann_forward_backward": 79.28,
+      "backport_forward_backward": 74.82
+    },
+    {
+      "shape": [
+        6292,
+        2048
+      ],
+      "cann_forward": 108.31,
+      "backport_forward": 107.59,
+      "cann_forward_backward": 317.01,
+      "backport_forward_backward": 288.84
+    },
+    {
+      "shape": [
+        804,
+        2048
+      ],
+      "cann_forward": 16.18,
+      "backport_forward": 17.55,
+      "cann_forward_backward": 74.63,
+      "backport_forward_backward": 80.36
+    }
+  ],
+  "wrapped_forward": {
+    "shape": [
+      804,
+      2048
+    ],
+    "expanded": 78.57,
+    "cann": 25.33,
+    "backport": 25.72
+  },
+  "wrapped_forward_window_ranges": {
+    "cann": [
+      25.17,
+      26.34
+    ],
+    "backport": [
+      25.68,
+      25.77
+    ]
+  },
+  "adopted_for_training": false
+}

@@ -1,0 +1,44 @@
+{
+  "thresholds": {
+    "loss_absolute": 0.001,
+    "gradient_relative_l2": 0.02,
+    "gradient_cosine_minimum": 0.999,
+    "adam_update_relative_l2": 0.02
+  },
+  "historical_adaptive_one_step": {
+    "dropout": 0.05,
+    "loss_absolute": 2.98e-08,
+    "gradient_relative_l2": 0.0,
+    "adam_update_relative_l2": 0.0,
+    "accepted_at_one_step_only": true
+  },
+  "historical_native_rmsnorm_replacement_one_step": {
+    "dropout": 0.05,
+    "gradient_relative_l2": 0.0557,
+    "adam_update_relative_l2": 0.2402,
+    "accepted": false
+  },
+  "historical_gdn_series": {
+    "micro_kernel_checks_passed": true,
+    "full_model_gate_passed": false,
+    "failure": "Missing or non-finite gradient; original evidence did not distinguish the two.",
+    "accepted": false
+  },
+  "training_64_step_ba_relative_l2_cross_mode": [
+    0.2047,
+    0.0797,
+    0.1732
+  ],
+  "training_64_step_ba_relative_l2_baseline_repeats": [
+    0.119,
+    0.1659
+  ],
+  "training_64_step_quality_accepted": false,
+  "rmsnorm_algorithm_backport_is_a_separate_experiment": {
+    "fp32_forward_and_input_gradient_cases_passed": 17,
+    "cases_total": 17,
+    "cann_wrapped_forward_us": 25.33,
+    "backport_wrapped_forward_us": 25.72,
+    "full_model_training_adoption": false
+  }
+}

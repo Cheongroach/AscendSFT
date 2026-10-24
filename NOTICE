@@ -1,0 +1,10 @@
+AscendSFT sanitized performance reports and public analysis examples
+Copyright 2026 AscendSFT contributors.
+
+These files contain newly authored reports, allowlisted numerical summaries,
+and newly authored public-API examples. They do not contain historical
+non-LLaMA-Factory training or kernel implementations.
+
+Referenced public software retains its own authorship and license.
+Historical measurements do not establish performance or training quality
+of the newly authored public overlay.

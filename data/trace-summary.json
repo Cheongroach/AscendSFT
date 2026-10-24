@@ -1,0 +1,80 @@
+{
+  "provenance": "Aggregate counts from historical profiling runs; not a raw trace.",
+  "profiled_updates_per_rank": 2,
+  "counts": {
+    "gdn_forward": {
+      "baseline": [
+        72,
+        72
+      ],
+      "adaptive": [
+        36,
+        36
+      ]
+    },
+    "gqa_forward": {
+      "baseline": [
+        24,
+        24
+      ],
+      "adaptive": [
+        12,
+        12
+      ]
+    },
+    "mlp_forward": {
+      "baseline": [
+        96,
+        96
+      ],
+      "adaptive": [
+        48,
+        48
+      ]
+    },
+    "host_operator_events": {
+      "baseline": [
+        1013134,
+        1063192
+      ],
+      "adaptive": [
+        809602,
+        850624
+      ]
+    },
+    "kernel_records_including_copy_and_communication": {
+      "baseline": [
+        201734,
+        212591
+      ],
+      "adaptive": [
+        159950,
+        168876
+      ]
+    }
+  },
+  "kernel_span_seconds": {
+    "baseline": [
+      4.67,
+      4.772
+    ],
+    "adaptive": [
+      3.352,
+      3.459
+    ]
+  },
+  "uncovered_span_seconds": {
+    "baseline": [
+      1.225,
+      1.968
+    ],
+    "adaptive": [
+      0.79,
+      0.922
+    ]
+  },
+  "not_claimed": [
+    "Uncovered intervals are CPU bottlenecks",
+    "HCCL bandwidth improved"
+  ]
+}

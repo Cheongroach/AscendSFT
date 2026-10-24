@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "provenance": "Historical measurements; sanitized numerical transcription, not raw logs.",
+  "public_overlay_was_benchmarked": false,
+  "workload_is_public": false,
+  "experiment_date": "2026-10-15",
+  "device": {
+    "model": "Ascend 910B4",
+    "count": 2,
+    "memory_gb_per_device": 64
+  },
+  "software": {
+    "torch": "2.7.1",
+    "torch_npu": "2.7.1",
+    "cann": "8.3 RC1",
+    "transformers": "5.2.0"
+  },
+  "contract": {
+    "model": "Qwen3.5-2B",
+    "lora_rank": 32,
+    "lora_alpha": 64,
+    "lora_dropout": 0.05,
+    "micro_batch": 2,
+    "world_size": 2,
+    "gradient_accumulation": 1,
+    "cutoff": 4096,
+    "packing": false,
+    "compute_dtype": "BF16",
+    "adaptive_threshold": 1536,
+    "updates_per_run": 64,
+    "replications_per_mode": 3,
+    "same_worker": true
+  },
+  "nonpadding_tokens_per_run": 205027,
+  "aggregates": {
+    "baseline": {
+      "seconds": {
+        "median": 111.42180402996019,
+        "min": 111.38771920325235,
+        "max": 113.36324134189636,
+        "values": [
+          111.38771920325235,
+          113.36324134189636,
+          111.42180402996019
+        ]
+      },
+      "tokens_per_second": {
+        "median": 1840.0976522052213,
+        "min": 1808.584489761117,
+        "max": 1840.6607251368653,
+        "values": [
+          1840.6607251368653,
+          1808.584489761117,
+          1840.0976522052213
+        ]
+      },
+      "steady_tokens_per_second": {
+        "median": 1889.829428379342,
+        "min": 1847.3712868540933,
+        "max": 1906.515455071771,
+        "values": [
+          1906.515455071771,
+          1847.3712868540933,
+          1889.829428379342
+        ]
+      },
+      "allocated_peak_gib": {
+        "median": 13.16335391998291,
+        "min": 13.16335391998291,
+        "max": 13.16335391998291,
+        "values": [
+          13.16335391998291,
+          13.16335391998291,
+          13.16335391998291
+        ]
+      },
+      "reserved_peak_gib": {
+        "median": 46.537109375,
+        "min": 46.537109375,
+        "max": 46.537109375,
+        "values": [
+          46.537109375,
+          46.537109375,
+          46.537109375
+        ]
+      },
+      "step_device_p50": {
+        "median": 1.6133576049804688,
+        "min": 1.5274917602539062,
+        "max": 1.6277823486328127,
+        "values": [
+          1.6133576049804688,
+          1.6277823486328127,
+          1.5274917602539062
+        ]
+      },
+      "step_device_p95": {
+        "median": 2.43613388671875,
+        "min": 2.271771594238281,
+        "max": 2.5317475463867183,
+        "values": [
+          2.271771594238281,
+          2.43613388671875,
+          2.5317475463867183
+        ]
+      },
+      "worker_subprocess_seconds": {
+        "median": 147.04281449317932,
+        "min": 146.16910195350647,
+        "max": 151.71299171447754,
+        "values": [
+          146.16910195350647,
+          151.71299171447754,
+          147.04281449317932
+        ]
+      }
+    },
+    "adaptive": {
+      "seconds": {
+        "median": 86.79309716494754,
+        "min": 85.04668028606102,
+        "max": 87.09645217517391,
+        "values": [
+          87.09645217517391,
+          86.79309716494754,
+          85.04668028606102
+        ]
+      },
+      "tokens_per_second": {
+        "median": 2362.2500716889117,
+        "min": 2354.022407108348,
+        "max": 2410.7584130312434,
+        "values": [
+          2354.022407108348,
+          2362.2500716889117,
+          2410.7584130312434
+        ]
+      },
+      "steady_tokens_per_second": {
+        "median": 2510.0668430253,
+        "min": 2494.033613712515,
+        "max": 2577.456999382362,
+        "values": [
+          2510.0668430253,
+          2494.033613712515,
+          2577.456999382362
+        ]
+      },
+      "allocated_peak_gib": {
+        "median": 36.23544645309448,
+        "min": 36.2169771194458,
+        "max": 36.23544645309448,
+        "values": [
+          36.23544645309448,
+          36.2169771194458,
+          36.23544645309448
+        ]
+      },
+      "reserved_peak_gib": {
+        "median": 58.412109375,
+        "min": 58.412109375,
+        "max": 58.41796875,
+        "values": [
+          58.41796875,
+          58.412109375,
+          58.412109375
+        ]
+      },
+      "step_device_p50": {
+        "median": 1.1959814453125,
+        "min": 1.1619508056640626,
+        "max": 1.2297723999023438,
+        "values": [
+          1.1619508056640626,
+          1.2297723999023438,
+          1.1959814453125
+        ]
+      },
+      "step_device_p95": {
+        "median": 1.821961755371093,
+        "min": 1.8095538879394524,
+        "max": 1.8879107116699216,
+        "values": [
+          1.8879107116699216,
+          1.821961755371093,
+          1.8095538879394524
+        ]
+      },
+      "worker_subprocess_seconds": {
+        "median": 123.06921815872192,
+        "min": 120.21622967720032,
+        "max": 124.42795395851135,
+        "values": [
+          123.06921815872192,
+          124.42795395851135,
+          120.21622967720032
+        ]
+      }
+    }
+  },
+  "throughput_gain_percent": 28.376342899950412,
+  "training_time_reduction_percent": 22.10402809345129,
+  "steady_throughput_gain_percent": 32.81975639345684,
+  "limitations": [
+    "No public samples or dataset fingerprints are distributed.",
+    "Three repetitions on one worker; no cross-worker replication.",
+    "No full-training quality acceptance or equivalence claim.",
+    "Longest actual source sequence was 3146, not 4096.",
+    "Published overlay is newly written and was not benchmarked on NPU."
+  ]
+}
