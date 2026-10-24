@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/hiyouga/LLaMA-Factory",
+  "commit": "c683e59edd8f893abc5e1403184a1d0644817d2a",
+  "trainer_path": "src/llamafactory/train/sft/trainer.py",
+  "trainer_url": "https://github.com/hiyouga/LLaMA-Factory/blob/c683e59edd8f893abc5e1403184a1d0644817d2a/src/llamafactory/train/sft/trainer.py",
+  "trainer_sha256": "4016aa09576891d53f2f3ee8f0cd21cd0f5c80c8ee1f45ab964a00750253d7c9",
+  "checkpoint_api_url": "https://github.com/hiyouga/LLaMA-Factory/blob/c683e59edd8f893abc5e1403184a1d0644817d2a/src/llamafactory/model/model_utils/checkpointing.py",
+  "license": "Apache-2.0",
+  "modification": "New public-source LLaMA-Factory overlay written for this release; not the original benchmark implementation.",
+  "patch_sha256": "800769ec253df2ca8d2e14d58e7e775d9e0358386eb88ac4d504a0eb3f6188e5"
+}

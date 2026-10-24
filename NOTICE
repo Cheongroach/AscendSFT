@@ -1,0 +1,14 @@
+AscendSFT public LLaMA-Factory overlay
+Copyright 2026 AscendSFT contributors.
+
+The patch modifies a publicly available LLaMA-Factory source file.
+That file retains its upstream notice:
+Copyright 2025 HuggingFace Inc. and the LlamaFactory team.
+Its inspiration and Apache-2.0 notice remain in the upstream file.
+
+Repository: https://github.com/hiyouga/LLaMA-Factory
+Pinned commit: c683e59edd8f893abc5e1403184a1d0644817d2a
+
+The upstream implementation is not an original invention of AscendSFT.
+The public overlay is newly written for this release and has not been
+benchmarked on NPU. Historical reported performance uses another implementation.

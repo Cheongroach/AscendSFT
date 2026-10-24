@@ -1,0 +1,2 @@
+# Unified diff 中的空白上下文行带有一个必要的空格。
+*.patch -whitespace

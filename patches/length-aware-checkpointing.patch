@@ -1,0 +1,32 @@
+--- a/src/llamafactory/train/sft/trainer.py
++++ b/src/llamafactory/train/sft/trainer.py
+@@ -28,6 +28,7 @@
+ 
+ from ...extras import logging
+ from ...extras.constants import IGNORE_INDEX
++from ...model.model_utils.ascend_checkpointing import LengthAwareCheckpointing
+ from ..callbacks import SaveProcessorCallback
+ from ..fp8_utils import configure_fp8_environment, patch_accelerator_for_fp8, verify_fp8_status
+ from ..trainer_utils import create_custom_optimizer, create_custom_scheduler
+@@ -71,6 +72,12 @@
+             self.model_accepts_loss_kwargs = False
+ 
+         self.finetuning_args = finetuning_args
++        threshold = int(os.environ.get("ASCENDSFT_GC_THRESHOLD", "0"))
++        if threshold < 0:
++            raise ValueError("ASCENDSFT_GC_THRESHOLD must be non-negative")
++        if threshold and (training_args.deepspeed or training_args.fsdp):
++            raise ValueError("This experimental policy currently supports ordinary DDP only")
++        self._ascendsft_gc = LengthAwareCheckpointing(threshold) if threshold else None
+         if gen_kwargs is not None:
+             # https://github.com/huggingface/transformers/blob/v4.45.0/src/transformers/trainer_seq2seq.py#L287
+             self._gen_kwargs = gen_kwargs
+@@ -149,6 +156,8 @@
+ 
+     @override
+     def compute_loss(self, model, inputs, *args, **kwargs):
++        if self._ascendsft_gc is not None:
++            self._ascendsft_gc.apply(model, inputs)
+         if self.finetuning_args.use_asft_loss:
+             with torch.no_grad():
+                 ref_outputs = self.ref_model(
